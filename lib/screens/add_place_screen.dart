@@ -24,7 +24,8 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
       return; // here you can add show error dialog...
     }
     Provider.of<GreatPlaces>(context, listen: false)
-        .addPlace(_titleController.toString(), _pickedImage);
+        .addPlace(_titleController.text.toString(), _pickedImage);
+        // watch out for this .text this can faul your application string
         Navigator.of(context).pop();
   }
 

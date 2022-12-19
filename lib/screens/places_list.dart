@@ -10,7 +10,7 @@ class PlaceListScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Your places"),
+          title: Text("Yourrr places"),
           actions: [
             IconButton(
                 onPressed: () {
@@ -30,7 +30,7 @@ class PlaceListScreen extends StatelessWidget {
                     leading: CircleAvatar(
                       backgroundImage: FileImage(great_places.items[i].image),
                     ),
-                    title: Text(great_places.items[i].title),
+                    title: Text(great_places.items[i].title.toString()),
                     onTap: (){},
                   ),
                   itemCount: great_places.items.length,
