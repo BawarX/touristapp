@@ -8,8 +8,9 @@ import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
 
 class ImageInputWidget extends StatefulWidget {
-  const ImageInputWidget({super.key});
-
+  
+  late final Function onSelectImage;
+  ImageInputWidget(this.onSelectImage);
   @override
   State<ImageInputWidget> createState() => _ImageInputWidgetState();
 }
@@ -26,6 +27,7 @@ class _ImageInputWidgetState extends State<ImageInputWidget> {
     final appDirection = await getApplicationDocumentsDirectory();
     final fileName = basename(fileImage!.path);
    final savedImage = await File(fileImage.path).copy('${appDirection.path}/$fileName');
+   widget.onSelectImage(savedImage);
     }
 
 
